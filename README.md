@@ -21,7 +21,8 @@ Epoch 100/100
 29936/29936 [==============================] - 7s 249us/step - loss: 1.8122 - acc: 0.3822 - val_loss: 1.9144 - val_acc: 0.3281
 
 Epoch 00100: val_acc did not improve from 0.40625
-Test accuracy: 0.337
+<br/>
+<h2>Test accuracy: 0.337</h2>
 
 
 ![alt text](Figure_1.png)
