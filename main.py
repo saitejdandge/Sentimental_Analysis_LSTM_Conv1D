@@ -158,7 +158,7 @@ print(y_data.shape)
 
 model=Sequential()
 model.add(embedding_layer)
-model.add(Flatten())
+model.add(LSTM(100))
 model.add(Dense(500,activation='relu'))
 model.add(Dense(300,activation='relu'))
 model.add(Dense(y_data.shape[1],activation="softmax"))
