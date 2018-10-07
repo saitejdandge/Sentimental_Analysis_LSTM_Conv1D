@@ -1,5 +1,5 @@
-# Sentimental_Analysis
-Sentimental Analysis using DeepLearning
+# Sentimental_Analysis of Tweet Emotions
+Sentimental Analysis using Long Short Term Memory Recurrent Neural Networks (DeepLearning)
 <h1>Yeah I think, I need more data</h1>
 
 
