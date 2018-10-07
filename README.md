@@ -3,17 +3,6 @@ Sentimental Analysis using DeepLearning
 <h1>Yeah I think, I need more data</h1>
 
 
-Epoch 00093: val_acc did not improve from 0.40625
-Epoch 94/100
-29936/29936 [==============================] - 8s 270us/step - loss: 1.8256 - acc: 0.3771 - val_loss: 1.9675 - val_acc: 0.3438
-
-Epoch 00094: val_acc did not improve from 0.40625
-Epoch 95/100
-29936/29936 [==============================] - 8s 273us/step - loss: 1.8221 - acc: 0.3793 - val_loss: 1.9444 - val_acc: 0.3281
-
-Epoch 00095: val_acc did not improve from 0.40625
-Epoch 96/100
-29936/29936 [==============================] - 8s 260us/step - loss: 1.8206 - acc: 0.3810 - val_loss: 1.9367 - val_acc: 0.3281
 
 Epoch 00096: val_acc did not improve from 0.40625
 Epoch 97/100
@@ -34,4 +23,5 @@ Epoch 100/100
 Epoch 00100: val_acc did not improve from 0.40625
 Test accuracy: 0.337
 
-<img src="Figure_1.png/>
+
+![alt text](Figure_1.png)
