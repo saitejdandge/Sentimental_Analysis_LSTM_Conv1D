@@ -1,12 +1,12 @@
 # -*- encoding: utf-8 -*-
 import numpy as np
-from utils import *
+
 import emoji
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation,Embedding
+from keras.layers import Dense, Dropout, Activation,Embedding,Flatten
 from keras.layers import LSTM, Bidirectional
 from keras.models import load_model, save_model
 from matplotlib import pyplot
@@ -17,7 +17,7 @@ from nltk.tokenize import word_tokenize
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 import os
-from keras.layers import Embedding,Flatten
+from keras.layers import Embedding,Flatten,Conv1D,MaxPooling1D
 from keras.utils import np_utils
 from sklearn.preprocessing import LabelEncoder
 import sys
@@ -158,7 +158,10 @@ print(y_data.shape)
 
 model=Sequential()
 model.add(embedding_layer)
-model.add(LSTM(100))
+model.add(Conv1D(30,1,activation="relu"))
+model.add(MaxPooling1D(4))
+model.add(LSTM(100,return_sequences=True))
+model.add(Flatten())
 model.add(Dense(500,activation='relu'))
 model.add(Dense(300,activation='relu'))
 model.add(Dense(y_data.shape[1],activation="softmax"))
@@ -182,7 +185,7 @@ x_train2, y_train2 = x_train[batch_size:], y_train[batch_size:]
 
 st=datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
 # define the checkpoint
-filepath="twitter/model_weights-improvement-{epoch:02d}-{val_acc:.6f}.hdf5"
+filepath="model_weights-improvement-{epoch:02d}-{val_acc:.6f}.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 callbacks_list = [checkpoint]
 
