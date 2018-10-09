@@ -16,35 +16,35 @@ Label Encoding Classes as
 One Hot Encoded class shape
 (40000, 13)
 2018-10-09 00:56:56.582717: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #
-=================================================================
-embedding_1 (Embedding)      (None, 20, 50)            1642750
-_________________________________________________________________
-conv1d_1 (Conv1D)            (None, 20, 30)            1530
-_________________________________________________________________
-max_pooling1d_1 (MaxPooling1 (None, 5, 30)             0
-_________________________________________________________________
-lstm_1 (LSTM)                (None, 5, 100)            52400
-_________________________________________________________________
-flatten_1 (Flatten)          (None, 500)               0
-_________________________________________________________________
-dense_1 (Dense)              (None, 500)               250500
-_________________________________________________________________
-dense_2 (Dense)              (None, 300)               150300
-_________________________________________________________________
-dense_3 (Dense)              (None, 13)                3913
-=================================================================
-Total params: 2,101,393
+
+
+x shape (4323, 300, 300, 3)
+y shape (4323, 5)
+
+
+| Layer(type)       	        | Output Shape           |  Param #  |
+| ------------- 		          |:-------------:	       | -----:    |
+| embedding_1 (Embedding)    	|  (None, 20, 50)        |   1642750 |
+| conv1d_1 (Conv1D)           |  (None, 20, 30)        |   1530    |
+| max_pooling1d_1 (MaxPooling1|  (None, 5, 30)         |   0       |
+| lstm_1 (LSTM)               |  (None, 5, 100)        |   52400   |
+| flatten_1 (Flatten)         |  ((None, 500)          |   0       |
+| dense_1 (Dense)             |   (None, 500)          |   250500  |
+| dense_2 (Dense)             |   (None, 300)          |   150300  |
+| dense_3 (Dense)             |   (None, 13)           |   3913    |
+
+
+
+Total params: <b>2,101,393</b>
 Trainable params: 458,643
 Non-trainable params: 1,642,750
-_________________________________________________________________
-None
+Train on 29936 samples, validate on 64 samples
+
 Finished Preprocessing data ...
 x_data shape :  (40000, 20)
 y_data shape :  (40000, 13)
+
 spliting data into training, testing set
-Train on 29936 samples, validate on 64 samples
 
 
 <h1>Yeah I think, I need more data</h1>
