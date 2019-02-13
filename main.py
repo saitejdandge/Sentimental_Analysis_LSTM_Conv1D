@@ -91,10 +91,7 @@ tokenizer = Tokenizer()
 tokenizer.fit_on_texts(word_sequences)
 word_indices = tokenizer.texts_to_sequences(word_sequences)
 word_index = tokenizer.word_index
-# print("keras word_index :")
-# print(word_index)
 print("Tokenized to Word indices as ")
-
 print(np.array(word_indices).shape)
 
 #padding word_indices
@@ -102,7 +99,6 @@ print(np.array(word_indices).shape)
 x_data=pad_sequences(word_indices,maxlen=MAX_SEQUENCE_LENGTH)
 
 print("After padding data")
-
 print(x_data.shape)
 
 
