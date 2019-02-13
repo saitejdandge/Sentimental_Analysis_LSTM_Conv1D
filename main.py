@@ -97,7 +97,6 @@ print(np.array(word_indices).shape)
 #padding word_indices
 
 x_data=pad_sequences(word_indices,maxlen=MAX_SEQUENCE_LENGTH)
-
 print("After padding data")
 print(x_data.shape)
 
@@ -134,8 +133,7 @@ embedding_layer = Embedding(len(word_index) + 1,EMBEDDING_DIM, weights=[embeddin
 
 # -----------------------------------------------------------------------------------------------------
 
-
-# ---------------------------Building Model ------------------------------------------------------------
+# ---------------------------One Hot encoding Labels ------------------------------------------------------------
 
 
 label_encoder = LabelEncoder()
@@ -144,14 +142,10 @@ le_name_mapping = dict(zip(label_encoder.transform(label_encoder.classes_),label
 print("Label Encoding Classes as ")
 print(le_name_mapping)
 
-
 y_data=np_utils.to_categorical(integer_encoded)
-
-
 print("One Hot Encoded class shape ")
 print(y_data.shape)
-
-
+# ---------------------------Building Model ------------------------------------------------------------
 model=Sequential()
 model.add(embedding_layer)
 model.add(Conv1D(30,1,activation="relu"))
@@ -191,9 +185,7 @@ scores = model.evaluate(x_test, y_test, verbose=0)
 print('Test accuracy:', scores[1])
 
 pyplot.plot(history.history['acc'],label='Training Accuracy')
-
 pyplot.plot(history.history['val_acc'],label='Validation Accuracy')
-
 
 pyplot.legend()
 pyplot.show()
